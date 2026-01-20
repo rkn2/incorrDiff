@@ -22,6 +22,13 @@ This repository analyzes the drivers of simulation error in InCore models by com
 
 ## Documentation
 *   [Analysis Report & Methodology](analysis_report.md): Detailed explanation of the choices made regarding feature selection, infinite value handling, and the inclusion of hazard intensity variables.
+*   [Paper Results Draft](paper_results_draft.md): Full academic text describing the methodology, results, and physical implications.
+
+## Key Results Summary
+1.  **System Is Deterministic**: A minimal model using only `EF_scale` (Wind Speed) and `Archetype` predicts the performance score with $R^2 \approx 0.999$.
+2.  **65 Significant Features**: Using a random noise baseline, we identified 65 building features that contain statistically significant information.
+3.  **Hazard Bias**: The high correlation with `EF_scale` reveals a systematic bias in the simulation: it is accurate for high-intensity events (EF4) but consistently erroneous for low-intensity events (EF0/1).
+4.  **Optimized Feature Set**: Recursive Feature Elimination reduced the necessary inputs to just **20 features** while maintaining perfect predictive power.
 
 ## Usage
 Run the main analysis script:
